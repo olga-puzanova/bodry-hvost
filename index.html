@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Бодрый хвост — демосайт школы груминга. Три программы: знакомство с профессией, курс с нуля и мастер-класс по работе с кудрявой шерстью.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Бодрый хвост — школа груминга">
+  <meta property="og:description" content="Портфолио-концепт школы груминга с выбором курса и демонстрационной записью.">
+  <meta property="og:url" content="https://olga-puzanova.github.io/bodry-hvost/">
+  <meta property="og:image" content="https://olga-puzanova.github.io/bodry-hvost/assets/hero-rose.jpg">
+  <meta property="og:image:alt" content="Рыжий пудель на фоне цвета пыльной розы">
+  <meta name="theme-color" content="#65344b">
+  <title>Бодрый хвост — школа груминга</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script src="booking.js" defer></script>
+  <script src="courses.js" defer></script>
+  <script src="hero-gallery.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+  <header class="header">
+    <div class="wrap header-row">
+      <a class="brand" href="#main">бодрый<span>хвост.</span><small>Школа груминга</small></a>
+      <nav aria-label="Разделы сайта"><a href="#courses">Курсы</a><a href="#start-program">Курс с нуля</a><a href="#workshop">Наставники</a><a href="#contact">Как записаться</a></nav>
+      <a class="menu-action" href="#courses">Выбрать курс</a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="hero-location">Школа груминга · Санкт-Петербург</p>
+          <h1 id="hero-title">Давай в груминг<span>!</span></h1>
+          <p class="hero-description">Попробуй себя в груминге, научись стричь с нуля или отработай одну технику. Выбери курс, который подходит тебе.</p>
+          <div class="booking-banner">
+            <div><span>Ближайший курс для новичков</span><strong>22–31 января 2027</strong><span>6 занятий · 42 000 ₽</span></div>
+            <button class="button black" type="button" data-book data-course="Старт в профессии" data-date="22–31 января 2027" data-price="42 000 ₽">Записаться на курс</button>
+          </div>
+          <a class="hero-link" href="#courses">Сравнить программы</a>
+        </div>
+        <div class="hero-photo" data-hero-gallery>
+          <img class="hero-slide is-active" src="assets/hero-rose.jpg" width="1448" height="1086" alt="Рыжий пудель на пыльно-розовом фоне" fetchpriority="high">
+          <img class="hero-slide" src="assets/hero-schnauzer.jpg" width="1440" height="1080" alt="Цвергшнауцер с серебристой шерстью" fetchpriority="low" decoding="async" aria-hidden="true">
+          <img class="hero-slide" src="assets/hero-corgi.jpg" width="1440" height="1080" alt="Рыже-белый вельш-корги" fetchpriority="low" decoding="async" aria-hidden="true">
+          <div class="hero-gallery-controls" role="group" aria-label="Фотографии собак" hidden>
+            <div class="hero-gallery-dots">
+              <button type="button" data-slide="0" aria-label="Пудель" aria-current="true"></button>
+              <button type="button" data-slide="1" aria-label="Цвергшнауцер"></button>
+              <button type="button" data-slide="2" aria-label="Корги"></button>
+            </div>
+            <button type="button" class="gallery-playback" aria-label="Остановить смену фотографий">Пауза</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses" class="section wrap course-section" aria-labelledby="courses-title">
+      <div class="course-intro"><h2 id="courses-title">Какой курс тебе подойдёт?</h2><p>Выбери цель. Покажем, с чего начать.</p></div>
+      <div class="filter" role="group" aria-label="Выбрать цель">
+        <button type="button" aria-pressed="true" data-goal="all">Все программы</button>
+        <button type="button" aria-pressed="false" data-goal="try">Хочу попробовать</button>
+        <button type="button" aria-pressed="false" data-goal="start">Хочу сменить профессию</button>
+        <button type="button" aria-pressed="false" data-goal="pro">Уже работаю</button>
+      </div>
+      <p class="filter-result" role="status" data-result>Три программы для разных целей.</p>
+      <div class="cards">
+        <article class="card card-try" data-program="try">
+          <div class="card-top"><span>Без опыта</span><span>2 дня</span></div>
+          <h3>Проба профессии</h3>
+          <p>За два занятия попробуешь мытьё, сушку и расчёсывание под присмотром наставника. Так ты поймёшь, хочется ли идти дальше.</p>
+          <a class="program-link" href="#try-program" data-course-link="try">Программа на 2 дня</a>
+          <dl><div><dt>Группа</dt><dd>До 6 человек</dd></div><div><dt>Ближайшая дата</dt><dd>16–17 января 2027</dd></div></dl>
+          <div class="card-bottom"><strong>9 900 ₽</strong><button class="button black" type="button" data-book data-course="Проба профессии" data-date="16–17 января 2027" data-price="9 900 ₽">Записаться</button></div>
+        </article>
+        <article class="card card-start" data-program="start">
+          <div class="card-top"><span>С нуля</span><span>6 дней</span></div>
+          <h3>Старт в профессии</h3>
+          <p>Освоишь полный цикл ухода. Сделаешь четыре учебные работы и итоговую стрижку, которую сможешь включить в портфолио.</p>
+          <a class="program-link" href="#start-program" data-course-link="start" aria-current="true">Программа на 6 дней</a>
+          <dl><div><dt>Группа</dt><dd>До 6 человек</dd></div><div><dt>Ближайшая дата</dt><dd>22–31 января 2027</dd></div></dl>
+          <div class="card-bottom"><strong>42 000 ₽</strong><button class="button black" type="button" data-book data-course="Старт в профессии" data-date="22–31 января 2027" data-price="42 000 ₽">Записаться</button></div>
+        </article>
+        <article class="card card-pro" data-program="pro">
+          <div class="card-top"><span>Для мастеров</span><span>1 день</span></div>
+          <h3>Форма на кудрях</h3>
+          <p>Научишься выстраивать силуэт и оформлять голову собаки с кудрявой шерстью. Отработаешь технику на модели и разберёшь результат с наставником.</p>
+          <a class="program-link" href="#pro-program" data-course-link="pro">Программа мастер-класса</a>
+          <dl><div><dt>Группа</dt><dd>До 4 человек</dd></div><div><dt>Ближайшая дата</dt><dd>6 февраля 2027</dd></div></dl>
+          <div class="card-bottom"><strong>12 500 ₽</strong><button class="button black" type="button" data-book data-course="Форма на кудрях" data-date="6 февраля 2027" data-price="12 500 ₽">Записаться</button></div>
+        </article>
+        <div class="course-photo" data-course-photo data-reveal hidden>
+          <img data-course-image="try" src="assets/course-lesson.jpg" width="1440" height="960" loading="lazy" decoding="async" alt="Наставница показывает ученице, как расчёсывать шерсть собаки на груминг-столе" hidden>
+          <img data-course-image="start" src="assets/course-haircut.jpg" width="1440" height="960" loading="lazy" decoding="async" alt="Ученица стрижёт собаку под присмотром наставницы" hidden>
+          <img data-course-image="pro" src="assets/course-poodle.jpg" width="1440" height="960" loading="lazy" decoding="async" alt="Грумер оформляет округлую форму кудрявой шерсти пуделя" hidden>
+        </div>
+      </div>
+    </section>
+
+    <section id="try-program" class="section course-program" data-detail="try" aria-labelledby="try-program-title" hidden>
+      <div class="wrap">
+        <div class="program-heading">
+          <div><p class="workshop-label">Проба профессии · 2 дня</p><h2 id="try-program-title">Два дня в роли грумера</h2></div>
+          <p>Познакомишься с профессией и попробуешь ухаживать за собакой под присмотром наставника.</p>
+        </div>
+        <ol class="program-days program-days-short">
+          <li>
+            <p class="day-label">День 1</p>
+            <h3>Знакомство с работой</h3>
+            <p>Посмотришь, как устроен стол грумера, познакомишься с инструментами и попробуешь расчёсывание на модели.</p>
+            <p class="day-result"><strong>Результат.</strong> Сможешь подобрать расчёску под тип шерсти и заметить, когда собаке нужна пауза.</p>
+          </li>
+          <li>
+            <p class="day-label">День 2</p>
+            <h3>Мытьё и сушка на модели</h3>
+            <p>Под присмотром наставника вымоешь собаку, высушишь шерсть и расчешешь её.</p>
+            <p class="day-result"><strong>Результат.</strong> Пройдёшь базовый цикл ухода и поймёшь, хочется ли идти на курс со стрижками.</p>
+          </li>
+        </ol>
+        <article class="course-task" aria-labelledby="try-task-title" data-reveal>
+          <p class="workshop-label">Практика второго дня</p>
+          <h3 id="try-task-title">Сделай первый уход</h3>
+          <ol>
+            <li>Осмотри шерсть и вместе с наставником подбери расчёску.</li>
+            <li>Вымой собаку, высуши и расчеши шерсть.</li>
+            <li>Проверь с наставником, полностью ли высохла шерсть и легко ли проходит расчёска.</li>
+          </ol>
+        </article>
+        <div class="program-sign-up">
+          <p><strong>16–17 января 2027</strong><span>2 занятия · 9 900 ₽</span></p>
+          <button class="button black" type="button" data-book data-course="Проба профессии" data-date="16–17 января 2027" data-price="9 900 ₽">Записаться на курс</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="start-program" class="section course-program" data-detail="start" aria-labelledby="start-program-title">
+      <div class="wrap">
+        <div class="program-heading">
+          <div>
+            <p class="workshop-label">Курс «Старт в профессии»</p>
+            <h2 id="start-program-title">Шесть дней с нуля</h2>
+          </div>
+          <p>От знакомства с инструментами до полного груминга под присмотром наставника. Вот что ты будешь делать и чему научишься на каждом занятии.</p>
+        </div>
+        <ol class="program-days">
+          <li>
+            <p class="day-label">День 1</p>
+            <h3>Инструменты и безопасность</h3>
+            <p>Подготовишь рабочее место и потренируешься держать машинку и ножницы на учебном манекене.</p>
+            <p class="day-result"><strong>Результат.</strong> Сможешь подготовить стол, выбрать инструмент и распознать, когда собаке нужна пауза.</p>
+          </li>
+          <li>
+            <p class="day-label">День 2</p>
+            <h3>Мытьё и сушка</h3>
+            <p>Подберёшь косметику, вымоешь, высушишь и расчешешь шерсть модели.</p>
+            <p class="day-result"><strong>Результат.</strong> Подготовишь шерсть к стрижке и проверишь, что она высохла и расчёсана до основания.</p>
+          </li>
+          <li>
+            <p class="day-label">День 3</p>
+            <h3>Гигиенический уход</h3>
+            <p>Под присмотром наставника обработаешь лапы и подстрижёшь шерсть в гигиенических зонах.</p>
+            <p class="day-result"><strong>Результат.</strong> Выполнишь базовый уход и поймёшь, когда стоит остановиться и позвать наставника.</p>
+          </li>
+          <li>
+            <p class="day-label">День 4</p>
+            <h3>Силуэт и переходы</h3>
+            <p>Поработаешь машинкой и ножницами на корпусе, лапах и шее.</p>
+            <p class="day-result"><strong>Результат.</strong> Сделаешь базовую салонную форму и научишься замечать резкие переходы длины.</p>
+          </li>
+          <li>
+            <p class="day-label">День 5</p>
+            <h3>Оформление головы</h3>
+            <p>На кудрявой шерсти отработаешь форму морды и связь с общим силуэтом.</p>
+            <p class="day-result"><strong>Результат.</strong> Оформишь округлый контур и проверишь симметрию с двух ракурсов.</p>
+          </li>
+          <li>
+            <p class="day-label">День 6</p>
+            <h3>Полный груминг на модели</h3>
+            <p>Составишь план ухода, выполнишь итоговую стрижку под наблюдением и сфотографируешь работу.</p>
+            <p class="day-result"><strong>Результат.</strong> Получишь фото для портфолио и узнаешь, что стоит отработать на следующих занятиях.</p>
+          </li>
+        </ol>
+        <article class="course-task course-task-start" aria-labelledby="start-task-title" data-reveal>
+          <p class="workshop-label">Практика шестого дня</p>
+          <h3 id="start-task-title">Собери первый образ</h3>
+          <ol>
+            <li>Осмотри шерсть и подбери инструменты с учётом пожеланий владельца.</li>
+            <li>Выполни уход и выстрой силуэт под присмотром наставника.</li>
+            <li>Сфотографируй работу и вместе с наставником разбери форму и симметрию.</li>
+          </ol>
+        </article>
+        <div class="program-sign-up">
+          <p><strong>22–31 января 2027</strong><span>6 занятий · 42 000 ₽</span></p>
+          <button class="button black" type="button" data-book data-course="Старт в профессии" data-date="22–31 января 2027" data-price="42 000 ₽">Записаться на курс</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="pro-program" class="section course-program" data-detail="pro" aria-labelledby="pro-program-title" hidden>
+      <div class="wrap">
+        <div class="program-heading">
+          <div><p class="workshop-label">Форма на кудрях · 1 день</p><h2 id="pro-program-title">Работа с кудрявой шерстью</h2></div>
+          <p>Мастер-класс для грумеров, которые уже стригут собак и хотят доработать форму головы и силуэт.</p>
+        </div>
+        <ol class="program-days">
+          <li>
+            <p class="day-label">Этап 1</p>
+            <h3>Подготовка шерсти</h3>
+            <p>Оценишь, как лежит завиток, и подготовишь шерсть к стрижке.</p>
+            <p class="day-result"><strong>Результат.</strong> Определишь, сколько объёма сохранить и где начать выстраивать контур.</p>
+          </li>
+          <li>
+            <p class="day-label">Этап 2</p>
+            <h3>Силуэт и форма головы</h3>
+            <p>Отработаешь переход от корпуса к шее, форму морды и линию головы на модели.</p>
+            <p class="day-result"><strong>Результат.</strong> Свяжешь форму головы с силуэтом стрижки и проверишь симметрию.</p>
+          </li>
+          <li>
+            <p class="day-label">Этап 3</p>
+            <h3>Разбор результата</h3>
+            <p>Сравнишь работу с планом и вместе с наставником разберёшь переходы и линии.</p>
+            <p class="day-result"><strong>Результат.</strong> Поймёшь, какие движения повторить на следующей стрижке.</p>
+          </li>
+        </ol>
+        <div class="program-sign-up">
+          <p><strong>6 февраля 2027</strong><span>1 занятие · 12 500 ₽</span></p>
+          <button class="button black" type="button" data-book data-course="Форма на кудрях" data-date="6 февраля 2027" data-price="12 500 ₽">Записаться на мастер-класс</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="workshop" class="section mentors" aria-labelledby="mentors-title">
+      <div class="wrap">
+        <div class="mentors-heading" data-reveal>
+          <h2 id="mentors-title">Кто ведёт занятия</h2>
+          <p>Наставники показывают технику на модели, помогают во время практики и разбирают результат вместе с тобой.</p>
+        </div>
+        <img class="mentors-photo" src="assets/mentors.jpg" width="1640" height="547" loading="lazy" decoding="async" alt="Слева направо: Анна Белова, Мария Соколова и Илья Воронов" data-reveal>
+        <ul class="mentor-list">
+          <li data-reveal><h3>Анна Белова</h3><p>Ведёт «Пробу профессии». Показывает, как познакомиться с собакой и безопасно провести первый уход.</p></li>
+          <li data-reveal><h3>Мария Соколова</h3><p>Ведёт «Старт в профессии». Учит планировать уход и разбирает итоговую стрижку.</p></li>
+          <li data-reveal><h3>Илья Воронов</h3><p>Ведёт «Форму на кудрях». Помогает выстроить силуэт и отработать переходы.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section wrap schedule" aria-labelledby="schedule-title">
+      <div><h2 id="schedule-title">Как вписать учёбу в график</h2><p>Занятия проходят очно в Санкт-Петербурге. На базовом курсе инструмент, косметика и модели входят в стоимость. В течение дня предусмотрены перерывы для людей и животных.</p></div>
+      <dl><div><dt>Проба профессии</dt><dd>Сб и вс · 11:00–16:00</dd></div><div><dt>Старт в профессии</dt><dd>Две недели, пт–вс · 10:00–17:00</dd></div><div><dt>Форма на кудрях</dt><dd>Одна суббота · 10:00–17:00</dd></div></dl>
+    </section>
+
+    <section id="faq" class="section faq" aria-labelledby="faq-title">
+      <div class="wrap faq-grid">
+        <h2 id="faq-title">Частые вопросы</h2>
+        <div class="accordion">
+          <details><summary>Можно прийти на «Старт» с нуля?</summary><p>Да. Начнёшь с безопасности, знакомства с инструментами и работы под присмотром. Проба профессии нужна, только если хочется сначала познакомиться с работой.</p></details>
+          <details><summary>Будет ли сертификат после курса?</summary><p>После итоговой работы на курсе «Старт в профессии» школа выдаёт сертификат о прохождении курса. Для «Пробы профессии» отдельный документ не предусмотрен.</p></details>
+          <details><summary>Нужно ли брать своего питомца или покупать инструмент?</summary><p>Моделей и инструмент на занятие подбирает школа. Можно взять с собой блокнот и удобную сменную обувь.</p></details>
+          <details><summary>Есть ли стажировка после курса?</summary><p>Практика с собаками под присмотром наставника входит в занятия. Отдельной стажировки в салоне после выпуска в программе нет.</p></details>
+          <details><summary>С чего начать после «Старта в профессии»?</summary><p>Начни с услуг, которые уже уверенно выполняешь. Итоговую стрижку можно добавить в портфолио. На финальном разборе наставник подскажет, какие навыки стоит закрепить перед первыми клиентами.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section wrap enrolment" aria-labelledby="contact-title">
+      <div class="enrolment-copy">
+        <h2 id="contact-title">Как записаться</h2>
+        <a class="program-link" href="#courses">К курсам и ценам</a>
+      </div>
+      <ol class="enrolment-steps" data-reveal>
+        <li><strong>Выбери курс и группу</strong><p>Посмотри даты, длительность и полную стоимость в карточке курса. Оставь имя и удобный контакт.</p></li>
+        <li><strong>Дождись подтверждения</strong><p>Администратор уточняет наличие места, время занятий и адрес учебной площадки в Санкт-Петербурге.</p></li>
+        <li><strong>Оплати после подтверждения</strong><p>Администратор сообщает, как оплатить курс. Если планы меняются, свяжись с ним, чтобы согласовать перенос.</p></li>
+      </ol>
+    </section>
+
+    <section id="location" class="section location" aria-labelledby="location-title">
+      <div class="wrap location-grid">
+        <div class="contact-card" data-reveal>
+          <h2 id="location-title">Контакты</h2>
+          <dl class="contact-details">
+            <div><dt>Демонстрационный адрес</dt><dd>Санкт-Петербург, Загородный проспект, 52</dd><dd>Витебский вокзал, метро «Пушкинская»</dd></div>
+            <div><dt>Связь с администратором</dt><dd>Вопросы о курсах, записи и расписании</dd></div>
+          </dl>
+          <button type="button" class="button black" data-ask>Задать вопрос</button>
+        </div>
+        <div class="location-map" data-reveal>
+          <picture>
+            <source media="(max-width: 760px)" srcset="https://static.maps.2gis.com/1.0?s=520x450&amp;c=59.91929,30.33006&amp;z=16&amp;pt=59.91929,30.33006" width="520" height="450">
+            <img src="https://static.maps.2gis.com/1.0?s=840x500&amp;c=59.91929,30.33006&amp;z=16&amp;pt=59.91929,30.33006" width="840" height="500" alt="Карта 2ГИС с меткой у Витебского вокзала, Загородный проспект, 52" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          </picture>
+          <a class="program-link" href="https://2gis.ru/spb/firm/5348552838700507" target="_blank" rel="noopener noreferrer">Открыть адрес в 2ГИС</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <a class="brand" href="#main">бодрый<span>хвост.</span></a>
+      <nav aria-label="Разделы в подвале"><a href="#courses">Курсы и цены</a><a href="#faq">Вопросы</a><a href="#contact">Как записаться</a><a href="#location">Контакты</a></nav>
+      <p>Концепт для портфолио Ольги. Школа, программы, условия и фотографии демонстрационные.</p>
+    </div>
+  </footer>
+  <dialog class="booking-dialog" aria-labelledby="booking-title">
+    <div class="dialog-top"><h2 id="booking-title">Заявка на курс</h2><button class="dialog-close" type="button" data-close aria-label="Закрыть форму">×</button></div>
+    <p class="dialog-course" data-selection></p>
+    <p class="demo-note dialog-next" data-next>В рабочей версии администратор подтвердит группу, адрес и условия оплаты.</p>
+    <form method="dialog">
+      <label>Имя<input type="text" name="student" required maxlength="80" autocomplete="off"></label>
+      <label>Телефон или Telegram<input type="text" name="contact" required maxlength="100" autocomplete="off"></label>
+      <label data-question hidden>Твой вопрос<textarea name="question" rows="3" maxlength="1000" required disabled></textarea></label>
+      <p class="demo-note">Демо-форма. Используй тестовые данные. Сообщение остаётся на этой странице.</p>
+      <button type="submit" class="button black">Отправить демо-заявку</button>
+    </form>
+    <p class="success" role="status" tabindex="-1" hidden></p>
+  </dialog>
+</body>
+</html>
