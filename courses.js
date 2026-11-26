@@ -2,6 +2,8 @@ const goalButtons = [...document.querySelectorAll("[data-goal]")];
 const courseCards = [...document.querySelectorAll("[data-program]")];
 const courseLinks = [...document.querySelectorAll("[data-course-link]")];
 const detailPanels = [...document.querySelectorAll("[data-detail]")];
+const programChoice = document.querySelector("[data-program-choice]");
+const programButtons = [...programChoice.querySelectorAll("[data-select-program]")];
 const results = document.querySelector("[data-result]");
 const cards = document.querySelector(".cards");
 const coursePhoto = document.querySelector("[data-course-photo]");
@@ -72,16 +74,22 @@ function filterCards(goal) {
 
 function showDetails(program) {
   for (const panel of detailPanels) panel.hidden = panel.dataset.detail !== program;
+  for (const button of programButtons) {
+    button.setAttribute("aria-pressed", String(button.dataset.selectProgram === program));
+  }
   for (const link of courseLinks) {
     if (link.dataset.courseLink === program) link.setAttribute("aria-current", "true");
     else link.removeAttribute("aria-current");
   }
 }
 
+function linkedProgram() {
+  return document.getElementById(location.hash.slice(1))?.dataset.programAnchor;
+}
+
 function showLinkedProgram() {
-  const panel = detailPanels.find(item => "#" + item.id === location.hash);
-  if (!panel) return;
-  const program = panel.dataset.detail;
+  const program = linkedProgram();
+  if (!program) return;
   if (courseCards.some(card => card.dataset.program === program && card.hidden)) filterCards("all");
   showDetails(program);
 }
@@ -95,7 +103,7 @@ for (const button of goalButtons) {
       return;
     }
     showDetails(goal);
-    if (detailPanels.some(panel => "#" + panel.id === location.hash)) {
+    if (linkedProgram()) {
       history.replaceState(history.state, "", "#courses");
     }
   });
@@ -108,5 +116,15 @@ for (const link of courseLinks) {
   });
 }
 
+for (const button of programButtons) {
+  button.addEventListener("click", () => {
+    const program = button.dataset.selectProgram;
+    showDetails(program);
+    if (cards.dataset.filtered === "true") filterCards(program);
+    if (linkedProgram()) history.replaceState(history.state, "", "#" + program + "-program");
+  });
+}
+
+programChoice.hidden = false;
 window.addEventListener("hashchange", showLinkedProgram);
 showLinkedProgram();

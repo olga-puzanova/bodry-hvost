@@ -46,11 +46,16 @@ h3 { font-weight: 750; }
 .header nav a:hover { text-decoration: underline; }
 .menu-action { border: 1px solid white; border-radius: 100px; text-decoration: none; color: white; padding: .57rem .92rem; font-weight: 700; }
 .menu-action:hover { background: white; color: var(--plum); }
+@media (min-width: 761px) {
+  .header-row { min-height: 75px; }
+  .header .brand { margin-block-end: .5rem; }
+}
 .hero-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.04fr); gap: clamp(1rem, 3.4vw, 3rem); align-items: center; min-height: min(600px, 57vw); padding-block: clamp(1.8rem, 4.8vw, 4.7rem) clamp(2.1rem, 5vw, 4.7rem); }
 .hero-copy { min-width: 0; }
 .hero-location { font-weight: 700; margin-bottom: .6rem; }
 .hero h1 span { color: var(--yellow); }
 .hero-description { margin-top: .95rem; max-width: 42ch; }
+.hero-description-mobile, .hero-mobile-actions { display: none; }
 .hero-photo { position: relative; aspect-ratio: 1.08; background: #bc7a83; min-width: 0; overflow: hidden; border-radius: 24px clamp(45px, 8vw, 118px) 24px 24px; border: 2px solid #b67988; }
 .hero-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-position: 60% center; opacity: 0; transition: opacity .65s ease; }
 .hero-slide:first-child { object-position: 66% center; }
@@ -99,7 +104,13 @@ h3 { font-weight: 750; }
 .card-bottom strong { font-variant-numeric: tabular-nums; }
 .program-link { align-self: start; font-weight: 750; }
 .program-link[aria-current="true"] { color: var(--plum); text-decoration-thickness: .14em; }
-.course-program { background: #f7eceb; }
+.program-switcher, .course-program { background: #f7eceb; }
+.program-switcher [data-program-anchor] { display: block; scroll-margin-top: 1rem; }
+.program-switcher .wrap { padding-top: clamp(3rem, 7.6vw, 6.8rem); }
+.program-choice { margin-top: 0; padding-bottom: clamp(1rem, 2vw, 1.5rem); }
+.program-choice button { border-color: #65344b66; color: var(--plum); padding-inline: .75rem; }
+.program-choice button[aria-pressed="true"] { background: #ead4dd; border-color: var(--plum); color: var(--plum); }
+.section.course-program { padding-top: 0; }
 .program-heading { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); align-items: end; gap: 1rem 2.3rem; }
 .program-heading > p { padding-bottom: .15rem; }
 .program-days { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem 0; padding: 0; }
@@ -122,6 +133,7 @@ h3 { font-weight: 750; }
 .mentor-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; list-style: none; padding: 0; margin: 1rem 0 0; }
 .mentor-list li { border-top: 1px solid #65344b50; padding: .8rem 0 0; }
 .mentor-list p { margin-top: .4rem; }
+.mentor-portrait { display: none; }
 .reviews { background: #f7eceb; }
 .reviews-heading { margin-bottom: 1.35rem; }
 .reviews-heading p { margin-top: .6rem; color: #4d5364; }
@@ -138,6 +150,7 @@ h3 { font-weight: 750; }
 .schedule dt { font-weight: 750; }
 .schedule dd, .card dd { font-variant-numeric: tabular-nums; }
 .faq { background: var(--yellow); }
+.faq-grid { grid-template-columns: 1fr; }
 .accordion { border-top: 1px solid #171d2f50; }
 .accordion details { border-bottom: 1px solid #171d2f50; }
 .accordion summary { cursor: pointer; list-style: none; position: relative; font-weight: 750; padding: .9rem 1.7rem .9rem 0; }
@@ -148,7 +161,7 @@ h3 { font-weight: 750; }
 .faq-ask, .enrolment-cta { display: grid; justify-items: start; gap: .8rem; width: min(100%, 24rem); padding: clamp(1rem, 2.4vw, 1.6rem); border: 1px solid #171d2f45; border-radius: 16px; }
 .faq-ask { align-self: end; background: var(--paper); }
 .enrolment-copy { display: grid; align-self: stretch; align-content: space-between; gap: 1.3rem; }
-.enrolment-cta { background: var(--yellow); }
+.enrolment-cta { background: #f7eceb; }
 .enrolment-steps { padding-left: 1.4rem; margin: 0; }
 .enrolment-steps li { padding-left: .3rem; margin-bottom: .8rem; }
 .enrolment-steps li::marker { color: var(--plum); font-weight: 750; }
@@ -191,8 +204,10 @@ h3 { font-weight: 750; }
   .location-map { margin-top: .75rem; }
   .contact-details { margin-block: .15rem .4rem; }
 }
-@media (min-width: 761px) {
-  .faq-grid { grid-template-rows: auto 1fr; row-gap: 1.25rem; }
+@media (min-width: 640px) {
+  .faq-grid { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); grid-template-rows: minmax(min-content, 1fr) auto; row-gap: 1.25rem; }
+  .faq-heading { grid-area: 1 / 1; align-self: stretch; }
+  .faq-heading h2 { position: sticky; top: clamp(2rem, 12vh, 6rem); }
   .faq-grid .accordion { grid-area: 1 / 2 / 3 / 3; }
   .faq-ask { grid-area: 2 / 1; }
 }
@@ -209,20 +224,30 @@ h3 { font-weight: 750; }
   .hero-grid { grid-template-columns: 1fr; padding-block: 1.35rem 2rem; min-height: auto; gap: 1.25rem; }
   :root { --text-display: clamp(2.85rem, 11vw, 5.2rem); }
   .hero-location { margin-bottom: .35rem; }
-  .hero-description { margin-top: .65rem; }
-  .booking-banner { margin-top: .8rem; }
-  .hero-photo { aspect-ratio: 1.47; }
+  .hero-copy { text-align: center; }
+  .hero-description:not(.hero-description-mobile), .hero .booking-banner, .hero-link-desktop { display: none; }
+  .hero-description-mobile { display: block; margin: 0 auto .75rem; }
+  .hero-photo { width: min(100%, 30rem); justify-self: center; aspect-ratio: 1.47; }
+  .hero-mobile-actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: .65rem; width: min(100%, 30rem); justify-self: center; }
+  .hero-mobile-book { background: var(--yellow); border-color: var(--yellow); color: var(--ink); }
+  .hero-mobile-compare { border-color: #ffffffc0; color: white; }
+  .hero-mobile-intake { grid-column: 1 / -1; max-width: none; text-align: center; }
+  .hero-mobile-intake strong { display: block; }
+  .mentors-photo { display: none; }
+  .mentor-list { width: min(100%, 30rem); grid-template-columns: 1fr; gap: 1.65rem; margin-inline: auto; }
+  .mentor-list li { border-top: 0; padding: 0; }
+  .mentor-portrait { display: block; aspect-ratio: 1; margin-bottom: .75rem; border-radius: 19px; background: #e3c3be url("assets/mentors.jpg") var(--portrait-position) center / 300% auto no-repeat; }
+  .mentor-portrait-anna { --portrait-position: 6%; }
+  .mentor-portrait-maria { --portrait-position: 50%; }
+  .mentor-portrait-ilya { --portrait-position: 94%; }
   .hero-slide:not(:first-child) { object-position: 60% 22%; }
-  .course-intro, .cards, .cards[data-filtered="true"], .program-heading, .mentors-heading, .review-grid, .schedule, .faq-grid, .enrolment { grid-template-columns: 1fr; }
+  .course-intro, .cards, .cards[data-filtered="true"], .program-heading, .mentors-heading, .review-grid, .schedule, .enrolment { grid-template-columns: 1fr; }
   .course-photo { min-height: 0; aspect-ratio: 16 / 9; }
   .course-intro { gap: .5rem; }
   .footer .wrap { align-items: start; flex-direction: column; }
 }
 @media (max-width: 560px) {
-  .program-days, .mentor-list { grid-template-columns: 1fr; }
-}
-@media (max-width: 390px) {
-  .booking-banner { padding: .75rem; gap: .5rem; flex-wrap: wrap; }
+  .program-days { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

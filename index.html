@@ -7,15 +7,12 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Бодрый хвост — школа груминга">
   <meta property="og:description" content="Портфолио-концепт школы груминга с выбором курса и демонстрационной записью.">
-  <meta property="og:url" content="https://olga-puzanova.github.io/bodry-hvost/">
-  <meta property="og:image" content="https://olga-puzanova.github.io/bodry-hvost/assets/hero-rose.jpg">
-  <meta property="og:image:alt" content="Рыжий пудель на фоне цвета пыльной розы">
   <meta name="theme-color" content="#65344b">
   <title>Бодрый хвост — школа груминга</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="styles.css?v=booking-layout-2">
+  <link rel="stylesheet" href="styles.css?v=mobile-course-and-mentors">
   <script src="booking.js" defer></script>
-  <script src="courses.js" defer></script>
+  <script src="courses.js?v=program-switcher" defer></script>
   <script src="hero-gallery.js" defer></script>
 </head>
 <body>
@@ -32,13 +29,14 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="hero-location">Школа груминга · Санкт-Петербург</p>
+          <p class="hero-description hero-description-mobile">Попробуй профессию, научись стричь с нуля и прокачай одну технику. Выбери курс под свою цель.</p>
           <h1 id="hero-title">Давай в груминг<span>!</span></h1>
           <p class="hero-description">Попробуй себя в груминге, научись стричь с нуля или отработай одну технику. Выбери курс, который подходит тебе.</p>
           <div class="booking-banner">
             <div><span>Ближайший курс для новичков</span><strong>22–31 января 2027</strong><span>6 занятий · 42 000 ₽</span></div>
             <button class="button black" type="button" data-book data-course="Старт в профессии" data-date="22–31 января 2027" data-price="42 000 ₽">Записаться на курс</button>
           </div>
-          <a class="hero-link" href="#courses">Сравнить программы</a>
+          <a class="hero-link hero-link-desktop" href="#courses">Сравнить программы</a>
         </div>
         <div class="hero-photo" data-hero-gallery>
           <img class="hero-slide is-active" src="assets/hero-rose.jpg" width="1448" height="1086" alt="Рыжий пудель на пыльно-розовом фоне" fetchpriority="high">
@@ -52,6 +50,11 @@
             </div>
             <button type="button" class="gallery-playback" aria-label="Остановить смену фотографий">Пауза</button>
           </div>
+        </div>
+        <div class="hero-mobile-actions">
+          <button class="button hero-mobile-book" type="button" data-book data-course="Старт в профессии" data-date="22–31 января 2027" data-price="42 000 ₽">Записаться на курс</button>
+          <a class="button hero-mobile-compare" href="#courses">Сравнить программы</a>
+          <p class="hero-mobile-intake"><strong>Ближайший набор с нуля</strong><span>22–31 января 2027 · 6 занятий · 42 000 ₽</span></p>
         </div>
       </div>
     </section>
@@ -98,7 +101,20 @@
       </div>
     </section>
 
-    <section id="try-program" class="section course-program" data-detail="try" aria-labelledby="try-program-title" hidden>
+    <div class="program-switcher">
+      <span id="try-program" data-program-anchor="try"></span>
+      <span id="start-program" data-program-anchor="start"></span>
+      <span id="pro-program" data-program-anchor="pro"></span>
+      <div class="wrap">
+        <div class="filter program-choice" role="group" aria-label="Выбрать программу курса" data-program-choice hidden>
+          <button type="button" data-select-program="try" aria-controls="try-program-details" aria-pressed="false">Проба профессии</button>
+          <button type="button" data-select-program="start" aria-controls="start-program-details" aria-pressed="true">Старт в профессии</button>
+          <button type="button" data-select-program="pro" aria-controls="pro-program-details" aria-pressed="false">Форма на кудрях</button>
+        </div>
+      </div>
+    </div>
+
+    <section id="try-program-details" class="section course-program" data-detail="try" aria-labelledby="try-program-title" hidden>
       <div class="wrap">
         <div class="program-heading">
           <div><p class="workshop-label">Проба профессии · 2 дня</p><h2 id="try-program-title">Два дня в роли грумера</h2></div>
@@ -134,7 +150,7 @@
       </div>
     </section>
 
-    <section id="start-program" class="section course-program" data-detail="start" aria-labelledby="start-program-title">
+    <section id="start-program-details" class="section course-program" data-detail="start" aria-labelledby="start-program-title">
       <div class="wrap">
         <div class="program-heading">
           <div>
@@ -197,7 +213,7 @@
       </div>
     </section>
 
-    <section id="pro-program" class="section course-program" data-detail="pro" aria-labelledby="pro-program-title" hidden>
+    <section id="pro-program-details" class="section course-program" data-detail="pro" aria-labelledby="pro-program-title" hidden>
       <div class="wrap">
         <div class="program-heading">
           <div><p class="workshop-label">Форма на кудрях · 1 день</p><h2 id="pro-program-title">Работа с кудрявой шерстью</h2></div>
@@ -238,9 +254,15 @@
         </div>
         <img class="mentors-photo" src="assets/mentors.jpg" width="1640" height="547" loading="lazy" decoding="async" alt="Слева направо: Анна Белова, Мария Соколова и Илья Воронов" data-reveal>
         <ul class="mentor-list">
-          <li data-reveal><h3>Анна Белова</h3><p>Ведёт «Пробу профессии». Показывает, как познакомиться с собакой и безопасно провести первый уход.</p></li>
-          <li data-reveal><h3>Мария Соколова</h3><p>Ведёт «Старт в профессии». Учит планировать уход и разбирает итоговую стрижку.</p></li>
-          <li data-reveal><h3>Илья Воронов</h3><p>Ведёт «Форму на кудрях». Помогает выстроить силуэт и отработать переходы.</p></li>
+          <li data-reveal>
+            <div class="mentor-portrait mentor-portrait-anna" aria-hidden="true"></div>
+            <h3>Анна Белова</h3><p>Ведёт «Пробу профессии». Показывает, как познакомиться с собакой и безопасно провести первый уход.</p></li>
+          <li data-reveal>
+            <div class="mentor-portrait mentor-portrait-maria" aria-hidden="true"></div>
+            <h3>Мария Соколова</h3><p>Ведёт «Старт в профессии». Учит планировать уход и разбирает итоговую стрижку.</p></li>
+          <li data-reveal>
+            <div class="mentor-portrait mentor-portrait-ilya" aria-hidden="true"></div>
+            <h3>Илья Воронов</h3><p>Ведёт «Форму на кудрях». Помогает выстроить силуэт и отработать переходы.</p></li>
         </ul>
       </div>
     </section>
@@ -278,7 +300,9 @@
 
     <section id="faq" class="section faq" aria-labelledby="faq-title">
       <div class="wrap faq-grid">
-        <h2 id="faq-title">Частые вопросы</h2>
+        <div class="faq-heading">
+          <h2 id="faq-title">Частые вопросы</h2>
+        </div>
         <div class="accordion">
           <details><summary>Можно прийти на «Старт» с нуля?</summary><p>Да. Начнёшь с безопасности, знакомства с инструментами и работы под присмотром. Проба профессии нужна, только если хочется сначала познакомиться с работой.</p></details>
           <details><summary>Будет ли сертификат после курса?</summary><p>После итоговой работы на курсе «Старт в профессии» школа выдаёт сертификат о прохождении курса. Для «Пробы профессии» отдельный документ не предусмотрен.</p></details>
