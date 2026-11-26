@@ -286,16 +286,23 @@
           <details><summary>Есть ли стажировка после курса?</summary><p>Практика с собаками под присмотром наставника входит в занятия. Отдельной стажировки в салоне после выпуска в программе нет.</p></details>
           <details><summary>С чего начать после «Старта в профессии»?</summary><p>Начни с услуг, которые уже уверенно выполняешь. Итоговую стрижку можно добавить в портфолио. На финальном разборе наставник подскажет, какие навыки стоит закрепить перед первыми клиентами.</p></details>
         </div>
+        <div class="faq-ask" data-reveal>
+          <p>Уточни у администратора, какой курс подойдёт и что взять на занятие.</p>
+          <button type="button" class="button black" data-ask>Задать вопрос</button>
+        </div>
       </div>
     </section>
 
     <section id="contact" class="section wrap enrolment" aria-labelledby="contact-title">
       <div class="enrolment-copy">
         <h2 id="contact-title">Как записаться</h2>
-        <a class="program-link" href="#courses">К курсам и ценам</a>
+        <div class="enrolment-cta">
+          <p>В карточках программ есть даты ближайших групп, длительность и полная стоимость курса.</p>
+          <a class="button black" href="#courses">Курсы и цены</a>
+        </div>
       </div>
       <ol class="enrolment-steps" data-reveal>
-        <li><strong>Выбери курс и группу</strong><p>Посмотри даты, длительность и полную стоимость в карточке курса. Оставь имя и удобный контакт.</p></li>
+        <li><strong>Выбери курс и группу</strong><p>Нажми «Записаться» в карточке программы и оставь имя и удобный контакт.</p></li>
         <li><strong>Дождись подтверждения</strong><p>Администратор уточняет наличие места, время занятий и адрес учебной площадки в Санкт-Петербурге.</p></li>
         <li><strong>Оплати после подтверждения</strong><p>Администратор сообщает, как оплатить курс. Если планы меняются, свяжись с ним, чтобы согласовать перенос.</p></li>
       </ol>
@@ -311,13 +318,11 @@
           </dl>
           <button type="button" class="button black" data-ask>Задать вопрос</button>
         </div>
-        <div class="location-map" data-reveal>
-          <picture>
-            <source media="(max-width: 760px)" srcset="https://static.maps.2gis.com/1.0?s=520x450&amp;c=59.91929,30.33006&amp;z=16&amp;pt=59.91929,30.33006" width="520" height="450">
-            <img src="https://static.maps.2gis.com/1.0?s=840x500&amp;c=59.91929,30.33006&amp;z=16&amp;pt=59.91929,30.33006" width="840" height="500" alt="Карта 2ГИС с меткой у Витебского вокзала, Загородный проспект, 52" loading="lazy" decoding="async" referrerpolicy="no-referrer">
-          </picture>
-          <a class="program-link" href="https://2gis.ru/spb/firm/5348552838700507" target="_blank" rel="noopener noreferrer">Открыть адрес в 2ГИС</a>
-        </div>
+        <picture class="location-map" data-reveal>
+          <source media="(max-width: 760px)" srcset="https://static.maps.2gis.com/1.0?s=520x450&amp;c=59.91929,30.33006&amp;z=16&amp;pt=59.91929,30.33006" width="520" height="450">
+          <img src="https://static.maps.2gis.com/1.0?s=840x500&amp;c=59.91929,30.33006&amp;z=16&amp;pt=59.91929,30.33006" width="840" height="500" alt="Карта 2ГИС с меткой у Витебского вокзала, Загородный проспект, 52" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+        </picture>
+        <a class="program-link location-map-link" href="https://2gis.ru/spb/firm/5348552838700507" target="_blank" rel="noopener noreferrer">Открыть адрес в 2ГИС</a>
       </div>
     </section>
   </main>
