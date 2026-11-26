@@ -154,7 +154,7 @@ h3 { font-weight: 750; }
 .enrolment-steps li::marker { color: var(--plum); font-weight: 750; }
 .enrolment-steps p { margin-top: .2rem; }
 .location { background: #f7eceb; }
-.location-grid { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); row-gap: .7rem; }
+.location-grid { grid-template-columns: 1fr; row-gap: .7rem; }
 .contact-card { display: grid; gap: 1rem; justify-items: start; }
 .contact-details { display: grid; gap: 1rem; margin-block: 1.15rem 1.4rem; }
 .contact-details dt { font-weight: 750; margin-bottom: .2rem; }
@@ -181,13 +181,20 @@ h3 { font-weight: 750; }
   .booking-banner .button { padding-inline: .7rem; }
   .program-days { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+@media (min-width: 961px) {
+  .location-grid { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
+  .contact-card { align-self: stretch; grid-template-rows: auto 1fr auto; }
+  .contact-details { align-self: center; margin-block: 0; }
+  .location-map-link { grid-column: 2; }
+}
+@media (max-width: 960px) {
+  .location-map { margin-top: .75rem; }
+  .contact-details { margin-block: .15rem .4rem; }
+}
 @media (min-width: 761px) {
   .faq-grid { grid-template-rows: auto 1fr; row-gap: 1.25rem; }
   .faq-grid .accordion { grid-area: 1 / 2 / 3 / 3; }
   .faq-ask { grid-area: 2 / 1; }
-  .contact-card { align-self: stretch; grid-template-rows: auto 1fr auto; }
-  .contact-details { align-self: center; margin-block: 0; }
-  .location-map-link { grid-column: 2; }
 }
 @media (max-width: 760px) {
   .wrap { width: calc(100% - 36px); }
@@ -206,10 +213,8 @@ h3 { font-weight: 750; }
   .booking-banner { margin-top: .8rem; }
   .hero-photo { aspect-ratio: 1.47; }
   .hero-slide:not(:first-child) { object-position: 60% 22%; }
-  .course-intro, .cards, .cards[data-filtered="true"], .program-heading, .mentors-heading, .review-grid, .schedule, .faq-grid, .enrolment, .location-grid { grid-template-columns: 1fr; }
+  .course-intro, .cards, .cards[data-filtered="true"], .program-heading, .mentors-heading, .review-grid, .schedule, .faq-grid, .enrolment { grid-template-columns: 1fr; }
   .course-photo { min-height: 0; aspect-ratio: 16 / 9; }
-  .location-map { margin-top: .75rem; }
-  .contact-details { margin-block: .15rem .4rem; }
   .course-intro { gap: .5rem; }
   .footer .wrap { align-items: start; flex-direction: column; }
 }
