@@ -224,14 +224,14 @@ h3 { font-weight: 750; }
   .hero-grid { grid-template-columns: 1fr; padding-block: 1.35rem 2rem; min-height: auto; gap: 1.25rem; }
   :root { --text-display: clamp(2.85rem, 11vw, 5.2rem); }
   .hero-location { margin-bottom: .35rem; }
-  .hero-copy { text-align: center; }
+  .hero-copy { text-align: start; }
   .hero-description:not(.hero-description-mobile), .hero .booking-banner, .hero-link-desktop { display: none; }
-  .hero-description-mobile { display: block; margin: 0 auto .75rem; }
+  .hero-description-mobile { display: block; margin: 0 0 .75rem; }
   .hero-photo { width: min(100%, 30rem); justify-self: center; aspect-ratio: 1.47; }
-  .hero-mobile-actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: .65rem; width: min(100%, 30rem); justify-self: center; }
+  .hero-mobile-actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: .65rem; width: min(100%, 30rem); justify-self: start; }
   .hero-mobile-book { background: var(--yellow); border-color: var(--yellow); color: var(--ink); }
   .hero-mobile-compare { border-color: #ffffffc0; color: white; }
-  .hero-mobile-intake { grid-column: 1 / -1; max-width: none; text-align: center; }
+  .hero-mobile-intake { grid-column: 1 / -1; max-width: none; text-align: start; }
   .hero-mobile-intake strong { display: block; }
   .mentors-photo { display: none; }
   .mentor-list { width: min(100%, 30rem); grid-template-columns: 1fr; gap: 1.65rem; margin-inline: auto; }
