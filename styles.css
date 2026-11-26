@@ -39,7 +39,8 @@ h3 { font-weight: 750; }
 }
 .header-row { min-height: 83px; display: flex; justify-content: space-between; align-items: center; gap: 1rem; border-bottom: 1px solid #ffffff66; }
 .brand { display: block; text-decoration: none; font-weight: 900; letter-spacing: -.065em; white-space: nowrap; }
-.brand span { color: var(--yellow); }
+.brand-name { display: block; transform: scale(.91); transform-origin: left center; }
+.brand-accent { color: var(--yellow); }
 .brand small { display: block; font-size: var(--text-body); font-weight: 600; line-height: 1.2; letter-spacing: 0; margin-top: .25rem; }
 .header nav { display: flex; gap: clamp(1rem, 3.8vw, 3.2rem); }
 .header nav a { text-decoration: none; font-weight: 650; }
