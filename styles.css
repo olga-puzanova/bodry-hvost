@@ -256,6 +256,7 @@ h3 { font-weight: 750; }
   .mentor-portrait-ilya { --portrait-position: 94%; }
   .hero-slide:not(:first-child) { object-position: 60% 22%; }
   .course-intro, .cards, .cards[data-filtered="true"], .program-heading, .mentors-heading, .review-grid, .schedule, .enrolment { grid-template-columns: 1fr; }
+  [data-program] > h3, .program-days > li > h3 { font-size: 1.25rem; }
   .course-photo { min-height: 0; aspect-ratio: 16 / 9; }
   .course-intro { gap: .5rem; }
   .footer .wrap { align-items: start; flex-direction: column; }
